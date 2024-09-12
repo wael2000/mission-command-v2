@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dashboard
-          image: 'quay.io/wael2000/dashboard:latest'
+          image: 'quay.io/missioncommand/dashboard:latest'
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -91,7 +91,7 @@ spec:
     spec:
       containers:
         - name: dashboard-ui
-          image: 'quay.io/wael2000/dashboard-ui:latest'
+          image: 'quay.io/missioncommand/dashboard-ui:latest'
           ports:
             - containerPort: 8080
               protocol: TCP
