@@ -2,6 +2,12 @@
 export JAVA_HOME=/usr/local/opt/openjdk@17
 export TESTCONTAINERS_RYUK_DISABLED=true
 
+# operators
+# 1 - OpenShift Pipelines
+# 2 - OpenShift GitOps
+# 3 - Service Interconnect
+# 3 - Web Terminal
+
 # argocd 
 oc new-project hub-ns
 oc adm groups new cluster-admins
@@ -10,7 +16,8 @@ oc adm groups add-users cluster-admins admin
 oc label ns hub-ns argocd.argoproj.io/managed-by=openshift-gitops --overwrite
 
 # same for azure-native
-oc label ns hub-ns argocd.argoproj.io/managed-by=openshift-gitops --overwrite
+oc new-project azure-native
+oc label ns azure-native argocd.argoproj.io/managed-by=openshift-gitops --overwrite
 
 #pipeline
 oc policy add-role-to-user admin system:serviceaccount:hub-ns:pipeline -n openshift-gitops
