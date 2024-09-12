@@ -24,7 +24,7 @@ spec:
       project: default
       sources:
         - path: gitops/dashboard
-          repoURL: https://github.com/wael2000/dora
+          repoURL: https://github.com/wael2000/mission-command-v2
           targetRevision: main
           repositoryType: git
       syncPolicy:
