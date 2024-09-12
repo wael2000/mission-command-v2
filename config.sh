@@ -133,4 +133,5 @@ oc create -f location-placement.yaml
 
 # create azuer native on DC cluster 
 # namespace per department 
-oc create pss-azure
+oc new-project fox-team-azure
+oc label ns fox-team-azure argocd.argoproj.io/managed-by=openshift-gitops --overwrite

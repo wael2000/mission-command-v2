@@ -1,7 +1,7 @@
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
-  name: pss-placement
+  name: fox-team-placement
   namespace: openshift-gitops
 spec:
   clusterSets:
@@ -18,7 +18,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
-  name: cs-placement
+  name: delta-team-placement
   namespace: openshift-gitops
 spec:
   clusterSets:
@@ -35,7 +35,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
-  name: treasury-placement
+  name: hawk-team-placement
   namespace: openshift-gitops
 spec:
   clusterSets:
@@ -52,7 +52,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
-  name: legal-placement
+  name: mes-team-placement
   namespace: openshift-gitops
 spec:
   clusterSets:
@@ -69,7 +69,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
-  name: marketing-placement
+  name: zwarte-team-placement
   namespace: openshift-gitops
 spec:
   clusterSets:
