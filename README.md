@@ -1,4 +1,4 @@
-# dora
+# mission-command-v2
 
 # Before proceeding with the cluster provisioning we need to create following configmaps in openshift-gitops ns
 
