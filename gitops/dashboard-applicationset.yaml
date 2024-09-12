@@ -26,7 +26,6 @@ spec:
         - path: gitops/dashboard
           repoURL: https://github.com/wael2000/mission-command-v2
           targetRevision: main
-          repositoryType: git
       syncPolicy:
         automated:
           prune: true
