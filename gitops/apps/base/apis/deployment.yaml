@@ -39,6 +39,11 @@ spec:
                 configMapKeyRef:
                   name: app-config
                   key: department
+            - name: departmentid
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: departmentid
             - name: system
               valueFrom:
                 configMapKeyRef:
