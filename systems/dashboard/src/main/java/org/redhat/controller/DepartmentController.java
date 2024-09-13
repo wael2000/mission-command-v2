@@ -136,6 +136,7 @@ public class DepartmentController {
             payload.put("action",data.get("action"));
             payload.put("location",data.get("location"));
             payload.put("system",data.get("system").toLowerCase());
+            payload.put("id",data.get("id").toLowerCase());
             opsPipelineProxyService.deploy(payload);
         }
     }

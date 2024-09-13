@@ -335,7 +335,7 @@
                 $scope.department = department;
                 var method = "POST";
                 var url = 'http://{composite}/department/deploy/trigger';                
-                var data = {"department" : department.name.toLowerCase(), "action": application.deployed?"remove":"deploy", "location": "dc", "system":application.name.toLowerCase()};
+                var data = {"department" : department.name.toLowerCase(), "action": application.deployed?"remove":"deploy", "location": "dc", "system":application.name.toLowerCase(),"id":application.id};
                 $http({
                     method: method,
                     url: url,

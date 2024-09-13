@@ -11,7 +11,11 @@ spec:
       type: string
     - default: 'true'
       name: status
-      type: string      
+      type: string
+    - default: '1'
+      description: id
+      name: id
+      type: string
     - name: callback_url
       type: string
       default: "http://dashboard-hub-ns.apps.cluster-cmlmj.cmlmj.sandbox2812.opentlc.com/department/deploy/commit"
@@ -23,4 +27,4 @@ spec:
       script: |
         #!/usr/bin/env bash
 
-        curl -XPOST -d '{"name": "$(params.system)", "deployed" : $(params.status)}' $(params.callback_url) -H 'Content-Type: application/json'
+        curl -XPOST -d '{"id": $(params.id),"name": "$(params.system)", "deployed" : $(params.status)}' $(params.callback_url) -H 'Content-Type: application/json'

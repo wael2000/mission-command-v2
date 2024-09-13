@@ -12,7 +12,7 @@ import javax.json.bind.annotation.JsonbTransient;
 @Entity
 @Table(name="Application")
 @Cacheable
-@NamedQuery(name = "App.findByNameUpper", query = "SELECT a FROM App a where UPPER(name) = UPPER(:name)", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
+@NamedQuery(name = "App.findByNameUpper", query = "SELECT a FROM App a where UPPER(name) = UPPER(:name) and UPPER(department.name)=UPPER(:dname)", hints = @QueryHint(name = "org.hibernate.cacheable", value = "true"))
 public class App extends PanacheEntity {
 
     private String name;

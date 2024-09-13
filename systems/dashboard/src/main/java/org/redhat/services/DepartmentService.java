@@ -109,10 +109,11 @@ public class DepartmentService {
      */
     @Transactional
     public App deploy(App app){
-        App object = em.createNamedQuery("App.findByNameUpper", App.class)
+        App object = App.findById(app.id);
+        /*App object = em.createNamedQuery("App.findByNameUpper", App.class)
         .setParameter("name",app.getName())
         .getResultList().toArray(new App[0])[0];
-        //App object = App.findByName(app.getName().toUpperCase());
+        //App object = App.findByName(app.getName().toUpperCase());*/
         object.setDeployed(app.isDeployed());
         em.persist(object);
         return object;
