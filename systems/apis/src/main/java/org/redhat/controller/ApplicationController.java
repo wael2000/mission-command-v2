@@ -19,6 +19,9 @@ public class ApplicationController {
     @ConfigProperty(name = "department" , defaultValue="1" )
     String department;
 
+    @ConfigProperty(name = "departmentid" , defaultValue="1" )
+    String departmentId;
+
     @ConfigProperty(name = "location" , defaultValue="DC" )
     String location;
 
@@ -51,7 +54,7 @@ public class ApplicationController {
         map.put("apilocation",location);
         map.put("system",system);
         map.put("department",department);
-        map.put("apps", App.find("name=?1",system).list());
+        map.put("apps", App.find("departmentId=?1",departmentId).list());
         return map;
     }
   
