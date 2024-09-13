@@ -49,7 +49,7 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/env/0/value 
-      value: tank-apis.pss
+      value: tank-apis
     - op: replace
       path: /spec/selector/matchLabels/app
       value: tank-ui

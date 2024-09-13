@@ -49,7 +49,7 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/env/0/value 
-      value: rotary-wing-apis.pss
+      value: rotary-wing-apis
     - op: replace
       path: /spec/selector/matchLabels/app
       value: rotary-wing-ui
