@@ -54,7 +54,7 @@ public class ApplicationController {
         map.put("apilocation",location);
         map.put("system",system);
         map.put("department",department);
-        map.put("apps", App.find("departmentId=?1",departmentId).list());
+        map.put("apps", App.find("departmentId=?1 and name=?2",departmentId,system).list());
         return map;
     }
   

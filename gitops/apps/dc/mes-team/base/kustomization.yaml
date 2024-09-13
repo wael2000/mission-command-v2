@@ -8,3 +8,4 @@ configMapGenerator:
   literals:
   - location=DC
   - department=mes-team
+  - departmentid=4  
