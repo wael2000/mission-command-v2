@@ -8,3 +8,4 @@ configMapGenerator:
   literals:
   - location=aws
   - department=fox-team
+  - departmentid=1

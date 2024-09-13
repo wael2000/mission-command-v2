@@ -8,4 +8,4 @@ configMapGenerator:
   literals:
   - location=DC
   - department=delta-team
-  - departmentid=3  
+  - departmentid=3

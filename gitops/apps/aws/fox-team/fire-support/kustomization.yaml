@@ -75,5 +75,5 @@ configMafire-supportenerator:
 - name: app-config
   behavior: merge
   literals:
-  - system=fire-support - Fire Support Vehicles
-  - app_name=fire-support
+  - system=Fire-Support
+  - app_name=Fire-Support

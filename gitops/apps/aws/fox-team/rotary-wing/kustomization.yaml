@@ -97,5 +97,5 @@ configMapGenerator:
 - name: app-config
   behavior: merge
   literals:
-  - system=rotary-wing
-  - app_name=rotary-wing - Rotary Wing Aircraft
+  - system=Rotary-Wing
+  - app_name=Rotary-Wing
