@@ -42,7 +42,7 @@ public class DepartmentService {
     }
 
     public Department[] getByStatus(String status){
-        return em.createNamedQuery("Banch.findByStatus", Department.class)
+        return em.createNamedQuery("Department.findByStatus", Department.class)
                 .setParameter("status",status)
                 .getResultList().toArray(new Department[0]);
     }
@@ -109,7 +109,10 @@ public class DepartmentService {
      */
     @Transactional
     public App deploy(App app){
-        App object = App.findByName(app.getName().toUpperCase());
+        App object = em.createNamedQuery("App.findByNameUpper", App.class)
+        .setParameter("name",app.getName())
+        .getResultList().toArray(new App[0])[0];
+        //App object = App.findByName(app.getName().toUpperCase());
         object.setDeployed(app.isDeployed());
         em.persist(object);
         return object;
