@@ -75,5 +75,5 @@ configMapGenerator:
 - name: app-config
   behavior: merge
   literals:
-  - system=fixed-wing - Fixed Wing Aircraft
-  - app_name=fixed-wing
+  - system=Fixed-Wing
+  - app_name=Fixed-Wing
