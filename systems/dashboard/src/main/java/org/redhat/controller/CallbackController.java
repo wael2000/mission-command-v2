@@ -74,7 +74,9 @@ public class CallbackController {
     
     @Scheduled(every="10s") 
     void broadcast() {
+        System.out.println(sessions.keySet());
         Map<Long, Department> updatedSystems = service.findSystemStatusByIds(sessions.keySet());
+        System.out.println(updatedSystems);
         if(systems.size()==0)
             systems.putAll(updatedSystems);
         else {

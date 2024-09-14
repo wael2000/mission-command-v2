@@ -130,13 +130,15 @@ public class DepartmentController {
     @Produces(MediaType.APPLICATION_JSON)
     public void deployTrigger(Map<String,String> data) {
         System.out.println("pipelineEnabled=" + pipelineEnabled);
+        System.out.println("data=" + data);
         if(pipelineEnabled){
             Map<String,String> payload = new HashMap<>();
             payload.put("department",data.get("department"));
             payload.put("action",data.get("action"));
             payload.put("location",data.get("location"));
             payload.put("system",data.get("system").toLowerCase());
-            payload.put("id",data.get("id").toLowerCase());
+            payload.put("id",data.get("id"));
+            System.out.println("payload=" + payload);
             opsPipelineProxyService.deploy(payload);
         }
     }

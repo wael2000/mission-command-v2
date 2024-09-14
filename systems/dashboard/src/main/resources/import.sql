@@ -16,11 +16,11 @@ insert into Application (id,name,description,deployed,department_id) values (7,'
 insert into Application (id,name,description,deployed,department_id) values (8,'Fire-Support','Fire Support vehicles',true,2);
 
 
-insert into Application (id,name,description,deployed,department_id) values (10,'Fire-Support','Fire Support vehicles',false,3);
-insert into Application (id,name,description,deployed,department_id) values (12,'Reconnaissance','Reconnaissance vehicles',false,3);
+insert into Application (id,name,description,deployed,department_id) values (9,'Fire-Support','Fire Support vehicles',false,3);
+insert into Application (id,name,description,deployed,department_id) values (10,'Reconnaissance','Reconnaissance vehicles',false,3);
 
-insert into Application (id,name,description,deployed,department_id) values (13,'Fixed-Wing','Fixed Wing Aircrafts',false,4);
-insert into Application (id,name,description,deployed,department_id) values (14,'Rotary-Wing','Rotary Wing Aircrafts',false,4);
-insert into Application (id,name,description,deployed,department_id) values (15,'Navy-Ship','BattleShip',false,4);
+insert into Application (id,name,description,deployed,department_id) values (11,'Fixed-Wing','Fixed Wing Aircrafts',false,4);
+insert into Application (id,name,description,deployed,department_id) values (12,'Rotary-Wing','Rotary Wing Aircrafts',false,4);
+insert into Application (id,name,description,deployed,department_id) values (13,'Navy-Ship','BattleShip',false,4);
 
 insert into config (id,key,value) values (1,'dblocation','DC');

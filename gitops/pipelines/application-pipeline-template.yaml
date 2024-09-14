@@ -8,6 +8,7 @@ spec:
     - name: department
     - name: location
     - name: system
+    - name: id
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -23,6 +24,8 @@ spec:
             value: $(tt.params.location)
           - name: system
             value: $(tt.params.system)
+          - name: id
+            value: $(tt.params.id)
         pipelineRef:
           name: application-pipeline
         serviceAccountName: pipeline

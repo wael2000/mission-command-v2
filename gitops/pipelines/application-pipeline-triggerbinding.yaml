@@ -12,3 +12,5 @@ spec:
       value: $(body.location)
     - name: system
       value: $(body.system)
+    - name: id
+      value: $(body.id)
