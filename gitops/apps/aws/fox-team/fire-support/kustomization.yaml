@@ -67,6 +67,25 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/selector/app
+      value: fire-support-apis
+  target:
+    kind: Service
+    name: apis-rhsi
+- patch: |-
+    - op: replace
+      path: /metadata/name
+      value: fire-support-apis-rhsi
+    - op: replace
+      path: /metadata/labels/app
+      value: fire-support-apis
+    - op: replace
+      path: /metadata/labels/app.kubernetes.io~1part-of
+      value: fire-support
+  target:
+    name: apis-rhsi 
+- patch: |-
+    - op: replace
+      path: /spec/selector/app
       value: fire-support-ui
   target:
     kind: Service
