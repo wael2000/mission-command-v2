@@ -67,6 +67,25 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/selector/app
+      value: fixed-wing-apis
+  target:
+    kind: Service
+    name: apis-rhsi
+- patch: |-
+    - op: replace
+      path: /metadata/name
+      value: fixed-wing-apis-rhsi
+    - op: replace
+      path: /metadata/labels/app
+      value: fixed-wing-apis
+    - op: replace
+      path: /metadata/labels/app.kubernetes.io~1part-of
+      value: fixed-wing
+  target:
+    name: apis-rhsi
+- patch: |-
+    - op: replace
+      path: /spec/selector/app
       value: fixed-wing-ui
   target:
     kind: Service

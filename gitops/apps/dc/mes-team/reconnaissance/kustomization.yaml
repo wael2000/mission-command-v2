@@ -67,6 +67,25 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/selector/app
+      value: reconnaissance-apis
+  target:
+    kind: Service
+    name: apis-rhsi
+- patch: |-
+    - op: replace
+      path: /metadata/name
+      value: reconnaissance-apis-rhsi
+    - op: replace
+      path: /metadata/labels/app
+      value: reconnaissance-apis
+    - op: replace
+      path: /metadata/labels/app.kubernetes.io~1part-of
+      value: reconnaissance
+  target:
+    name: apis-rhsi
+- patch: |-
+    - op: replace
+      path: /spec/selector/app
       value: reconnaissance-ui
   target:
     kind: Service
@@ -75,5 +94,5 @@ configMapGenerator:
 - name: app-config
   behavior: merge
   literals:
-  - system=reconnaissance - Reconnaissance Vehicles
-  - app_name=reconnaissance
+  - system=Reconnaissance
+  - app_name=Reconnaissance

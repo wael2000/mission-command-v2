@@ -85,7 +85,19 @@ patches:
       value: rotary-wing-apis
   target:
     kind: Service
-    name: apis-rhsi 
+    name: apis-rhsi
+- patch: |-
+    - op: replace
+      path: /metadata/name
+      value: rotary-wing-apis-rhsi
+    - op: replace
+      path: /metadata/labels/app
+      value: rotary-wing-apis
+    - op: replace
+      path: /metadata/labels/app.kubernetes.io~1part-of
+      value: rotary-wing
+  target:
+    name: apis-rhsi
 - patch: |-
     - op: replace
       path: /spec/selector/app
@@ -97,5 +109,5 @@ configMapGenerator:
 - name: app-config
   behavior: merge
   literals:
-  - system=rotary-wing
-  - app_name=rotary-wing - Rotary Wing Aircraft
+  - system=Rotary-Wing
+  - app_name=Rotary-Wing
