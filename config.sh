@@ -6,7 +6,9 @@ export TESTCONTAINERS_RYUK_DISABLED=true
 # 1 - OpenShift Pipelines
 # 2 - OpenShift GitOps
 # 3 - Service Interconnect
-# 3 - Web Terminal
+# 4 - Web Terminal
+# 5 - Azure service operator
+
 
 # argocd 
 oc new-project hub-ns
@@ -15,9 +17,12 @@ oc adm policy add-cluster-role-to-group cluster-admin cluster-admins
 oc adm groups add-users cluster-admins admin
 oc label ns hub-ns argocd.argoproj.io/managed-by=openshift-gitops --overwrite
 
+
 # same for azure-native
 oc new-project azure-native
 oc label ns azure-native argocd.argoproj.io/managed-by=openshift-gitops --overwrite
+# team azure native
+# oc label ns fox-team-azure argocd.argoproj.io/managed-by=openshift-gitops --overwrite
 
 #pipeline
 oc policy add-role-to-user admin system:serviceaccount:hub-ns:pipeline -n openshift-gitops
