@@ -136,6 +136,9 @@ oc create -f cluster-secrets.yaml -n hub-ns
 oc create -f apps-placement.yaml
 oc create -f location-placement.yaml
 
+# create following GitOpsCluster and its binding and placement 
+oc create -f argocd-placement.yaml
+
 # create azuer native on DC cluster 
 # namespace per department 
 oc new-project fox-team-azure
