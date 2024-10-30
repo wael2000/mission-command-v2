@@ -17,7 +17,7 @@ spec:
     - default: ns
       name: type
       type: string
-    - default: 'http://dashboard-hub-ns.apps.cluster-gnqjg.gnqjg.sandbox2612.opentlc.com/department/provision/commit'
+    - default: 'http://dashboard-hub-ns.apps.cluster-kmfzs.kmfzs.sandbox1264.opentlc.com/department/provision/commit'
       name: callback_url
       type: string
   tasks:
