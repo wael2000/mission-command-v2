@@ -1,12 +1,13 @@
-DC_URL=https://api.cluster-d2npd.d2npd.sandbox2068.opentlc.com:6443
+
+DC_URL=https://api.cluster-kmfzs.kmfzs.sandbox1264.opentlc.com:6443
 DC_UID=admin
-DC_PWD=CnR3qicE4mzQ5sm5
+DC_PWD=8kCP7liqn8US23N9
 #DC_TOKEN=eyJhbGciOiJSUzI1NiIsImtpZCI6IkxUeEp5cXdUdnRGOXBvZzdPckxWR1BSVWZMa2N2T2xFRi10eHdIYTF3aVUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJodWItbnMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoicmhzaS10b2tlbi1qc3I0biIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJyaHNpIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNDZiMGJkMTgtYTc5Yy00ZTkwLWJlY2MtY2Y4NWQ0MjBmNGZjIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omh1Yi1uczpyaHNpIn0.QBNsLXWKFs0_AZnAqRMcsqJYTbunQ1AQye6NZ6Vtd9C2s8z87VDRnqbq8MAmwb9q86tCNYu7n2UccB9URWtSIqx3td8KjI59RKv8Ju4BGGa-q943d9RRRNGcYt1EuStv-IaOO-eeFt1gchwUxZOUjMMxcI7Kfmb1nJkvLEzOKq1SHQbFcC8bsWtZgpNedasUNURI-s1QN3Nwn-EpvpBYBL2uk2wyhhz_6PxfMyFbLYmKmIiOHr47a4TVysHviZGdjmFZspZhIIUvq-VzGl3x0RtM3uuzIHQnPvcG0gwvEavjohR1sf6GtbVfwyI2_18WlzCgliQZzS2IDVd8gM2yDpLruunVt-hVUd3jmExMsB8T178NzQVpOJYRC-5EaULUQBCBQ-pTncWiPaMUgP4vvmUVlWUNkIAR2aSWaW0BbL-r579tx9OF1El0BtOt4z7gDotjKr5zAR8t8Ef5_AqCy3cqF18L-XqCnNX67AV_RzSf4ZC5QkvzUCC8xDqmvxVjRtzmjNPIOo6spjJ1t-x7kAccnpSUZe0BP1Xrz83ysrdYMjGClEXjP9AAuNFaWbmJiR2U0Wo1PqyKZN_-9Y5_ca3ObwXUNE9xPOPo5-T_Fua3W74CSSltEwMnqh-iXe0yfSu1oOnfx0JErSS-3loO4K0iDET1a7f9tqaxNDuHrPc
 DC_STATUS=on  # on/off
 
-AWS_URL=https://api.cluster-98d76.98d76.sandbox932.opentlc.com:6443
+AWS_URL=https://api.cluster-vcggs.vcggs.sandbox1838.opentlc.com:6443
 AWS_UID=admin
-AWS_PWD=NDgiKCr2eMIOQczD
+AWS_PWD=XHt1jsvoLv7rMpUf
 AWS_TOKEN=
 AWS_STATUS=on   # on/off
 
@@ -23,7 +24,8 @@ PROJECT=fox-team
 MSG="Welcome to Red Hat Demo"
 RESULT=""
 
-alias skupper=~/Downloads/skupper
+alias skupper=~/Documents/openshift/skupper
+alias oc=~/Documents/openshift/oc
 
 declare menu_array
 #menu_array=( ["1"]="1) init" ["woof"]="dog")
@@ -141,7 +143,7 @@ fi
 if [[ $AZURE_NATIVE_STATUS == "on" ]]
 then
   oc login --server=$DC_URL -u $DC_UID -p $DC_PWD --insecure-skip-tls-verify=true
-  oc project $PROJECT-azure
+  oc project azure-native
   skupper init --enable-console --enable-flow-collector --console-auth unsecured --site-name azure-native-site
   menu_array["4"]="\033[43m4) init\033[0m"
 fi
@@ -185,7 +187,7 @@ oc login --server=$DC_URL -u $DC_UID -p $DC_PWD --insecure-skip-tls-verify=true
 oc project $PROJECT
 skupper service bind fixed-wing-apis service fixed-wing-apis-rhsi
 # db from Azure native
-oc project $PROJECT-azure
+oc project azure-native
 skupper service bind postgresql service azure-postgresql-service
 menu_array["8"]="\033[43m8) bind service\033[0m"
 menu_array["12"]="12) unbind service"
@@ -226,7 +228,7 @@ menu_array["7"]="7) bind service"
 "12")
 # unbind Azure Native DB
 oc login --server=$DC_URL -u $DC_UID -p $DC_PWD --insecure-skip-tls-verify=true
-oc project $PROJECT-azure
+oc project azure-native
 skupper service unbind postgresql service azure-postgresql-service
 menu_array["12"]="\033[43m12) unbind service\033[0m"
 menu_array["8"]="8) bind service"
@@ -256,7 +258,7 @@ if [[ $AZURE_NATIVE_STATUS == "on" ]]
 then
   echo "---- AZURE-NATIVE ----"
   oc login --server=$DC_URL -u $DC_UID -p $DC_PWD --insecure-skip-tls-verify=true
-  oc project $PROJECT-azure
+  oc project azure-native
   skupper link create azure_native_to_dc.token --name azure-native-to-dc
 fi  
 ;;
@@ -296,7 +298,7 @@ fi
 if [[ $AZURE_NATIVE_STATUS == "on" ]] 
 then
   oc login --server=$DC_URL -u $DC_UID -p $DC_PWD --insecure-skip-tls-verify=true
-  oc project $PROJECT-azure
+  oc project azure-native
   skupper delete
 fi
 
