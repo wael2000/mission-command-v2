@@ -50,7 +50,7 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/replicas
-      value: 0
+      value: 2
     - op: replace
       path: /spec/selector/matchLabels/app
       value: fixed-wing-apis
