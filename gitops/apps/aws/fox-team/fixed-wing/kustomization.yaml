@@ -5,6 +5,9 @@ resources:
 patches:
 - patch: |-
     - op: replace
+      path: /spec/replicas
+      value: 0
+    - op: replace
       path: /metadata/name
       value: fixed-wing-apis
     - op: replace
@@ -48,9 +51,6 @@ patches:
     kind: Deployment
     name: ui
 - patch: |-
-    - op: replace
-      path: /spec/replicas
-      value: 0
     - op: replace
       path: /spec/selector/matchLabels/app
       value: fixed-wing-apis
