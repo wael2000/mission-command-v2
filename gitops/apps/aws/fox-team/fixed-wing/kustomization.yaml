@@ -6,7 +6,7 @@ patches:
 - patch: |-
     - op: replace
       path: /spec/replicas
-      value: 0
+      value: 1
     - op: replace
       path: /metadata/name
       value: fixed-wing-apis
