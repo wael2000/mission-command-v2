@@ -210,7 +210,7 @@ menu_array["5"]="5) bind service"
 # unbind service on AWS
 oc login --server=$AWS_URL -u $AWS_UID -p $AWS_PWD --insecure-skip-tls-verify=true
 oc project $PROJECT
-skupper service unbind postgresql service postgresqldb
+skupper service unbind fixed-wing-apis service fixed-wing-apis-rhsi
 menu_array["10"]="\033[43m10) unbind service\033[0m"
 menu_array["6"]="6) bind service"
 ;;
