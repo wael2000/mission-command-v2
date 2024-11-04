@@ -1,14 +1,9 @@
 # gitops filder
 
-# create placement objects
-oc create -f placements/apps-placement.yaml
-oc create -f placements/location-placement.yaml
+# create placement objects if not created
+oc create -f gitops/placements/apps-placement.yaml
+oc create -f gitops/placements/location-placement.yaml
 
-# deploy dashboard app
-oc create -f dashboard-applicationset.yaml -n openshift-gitops
-
-# to delete 
-#oc delete -f dashboard-applicationset.yaml -n openshift-gitops
 
 # create hub-apis sa and generate token with cluster-admin role
 oc create sa hub-apis
@@ -30,6 +25,9 @@ data:
 type: Opaque
 EOF
 
+# once secret is created, the ndeploy the dashboard app
+# deploy dashboard app
+oc create -f gitops/dashboard-applicationset.yaml -n openshift-gitops
 
 # delete 
 #oc delete  -f dashboard-applicationset.yaml -n openshift-gitops
