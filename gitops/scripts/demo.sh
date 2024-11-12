@@ -24,6 +24,7 @@ PROJECT=fox-team
 MSG="Welcome to Red Hat Demo"
 RESULT=""
 
+# set skupper and oc cli path
 alias skupper=~/Documents/openshift/skupper
 alias oc=~/Documents/openshift/oc
 
